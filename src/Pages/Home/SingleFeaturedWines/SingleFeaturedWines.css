@@ -1,0 +1,46 @@
+/******** SINGLE FEATURED WINES CSS *********/
+.featwine-inner {
+    border: 1px solid transparent;
+    padding: 50px 0px;
+    transition: .5s;
+    box-shadow: 2px 2px 11px -3px #c02323;
+    background-image: url('https://i.ibb.co/WzmdQ8z/footer.jpg');
+}
+
+.feat-img img {
+    margin-bottom: 20px;
+}
+
+.feat-details h3 {
+    font-size: 18px;
+    font-weight: 400;
+    color: #c02323;
+}
+
+.feat-details p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.feat-details a button {
+    background-color: transparent;
+    color: #c02323;
+    text-transform: uppercase;
+    border: 1px solid #c02323;
+    outline: none;
+    padding: 10px 15px;
+    display: inline-block;
+    margin-top: 15px;
+    transition: .5s;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.feat-details a button:hover{
+    background-color: #c02323;
+    color: #FFFFFF;
+}
+
+.featwine-inner:hover {
+    border: 1px solid #c02323;
+}

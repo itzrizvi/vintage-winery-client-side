@@ -1,10 +1,15 @@
 import React from 'react';
+import Footer from '../Shared/Footer/Footer';
+import Navigation from '../Shared/Navigation/Navigation';
+import Wines from '../Wines/Wines';
 
 const AllWines = () => {
     return (
-        <div>
-            <h2>This is All wines</h2>
-        </div>
+        <>
+            <Navigation />
+            <Wines />
+            <Footer />
+        </>
     );
 };
 
