@@ -1,8 +1,8 @@
 import React from 'react';
 import Footer from '../../Shared/Footer/Footer';
 import Navigation from '../../Shared/Navigation/Navigation';
-
 import Banner from '../Banner/Banner';
+import About from '../About/About';
 
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
         <>
             <Navigation />
             <Banner />
-
+            <About />
             <Footer />
         </>
     );
