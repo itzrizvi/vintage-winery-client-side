@@ -1,0 +1,118 @@
+/************* NAVIGATION CSS **************/
+
+/****TOP BAR****/
+ul.schedule-list {
+    list-style: none;
+    padding: 0;
+}
+
+ul.schedule-list li {
+    margin-right: 14px !important;
+    font-size: 14px;
+    color: #FFFFFF;
+}
+
+header.head-main {
+    background-color: #2e2e2e;
+}
+
+.top-bar {
+    padding: 9px 0px;
+}
+
+ul.schedule-list li span {
+    color: #c02323;
+}
+
+.top-bar-right-inner button, .top-bar-right-inner a {
+    background: none;
+    border: none;
+    outline: none;
+    margin: 5px 5px;
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 14px;
+    float: right;
+    overflow: hidden;
+    padding: 0px 6px;
+    border-left: 2px solid #c02323;
+}
+
+/**NAV MENU CSS**/
+.logo h2 {
+    color: #FFFFFF;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.logo h2 span {
+    color: #c02323;
+}
+
+.nav-menu a {
+    font-size: 14px;
+    color:#FFFFFF !important;
+    text-decoration: none;
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 1px solid transparent;
+    transition: .5s;
+}
+
+.nav-menu a:hover{
+    color: #c02323;
+}
+
+button:focus:not(:focus-visible) {
+    box-shadow: none;
+    border: 2px solid #c02323 !important;
+}
+
+button.navbar-toggler {
+    border: 2px solid #2e2e2e;
+    box-shadow: none;
+    background-color: #FFFFFF !important;
+    border-color: #FFFFFF !important;
+}
+
+.navbar-light .navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+}
+
+.justify-content-end.nav-menu.navbar-collapse.collapse.show {
+    text-align: left;
+    background-color: #242424;
+}
+
+
+/***** RESPONSIVE CSS ****/
+@media screen and (max-width:767px){
+    ul.schedule-list {
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    .top-bar-right-inner {
+        text-align: center;
+    }
+    .nav-menu-area::after{
+        height: 105px;
+    }
+    .top-bar-right-inner button, .top-bar-right-inner a {
+        float: none;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width:428px){
+    ul.schedule-list{
+        display: block !important;
+    }
+}
+@media screen and (max-width:406px){
+    ul.schedule-list {
+        display: block !important;
+        text-align: center;
+    }
+}

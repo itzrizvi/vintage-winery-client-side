@@ -1,0 +1,89 @@
+/*********** Footer Main CSS *************/
+footer.foot{
+    background-image: url('https://i.ibb.co/WzmdQ8z/footer.jpg');
+    padding: 40px 0px;
+    position: relative;
+    color: #FFFFFF;
+}
+
+footer.foot::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.6);
+    top: 0;
+    left: 0;
+}
+
+footer ul, footer ul li{
+    margin: 0;
+    padding: 0;
+}
+
+.foot-title h2 {
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    border-bottom: 2px solid #FFFF;
+    display: inline-block;
+    padding-bottom: 7px;
+    color: #ffffff;
+}
+
+.foot-nav-menu a {
+    padding: 0px;
+    margin: 0px;
+    color: #FFFFFF !important;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.foot-detail-1 p, ul.foot-detail-3 li, ul.foot-detail-4 li {
+    font-size: 15px;
+    line-height: 27px;
+    list-style: none;
+}
+
+.foot-detail-4 li{
+    margin-bottom: 15px;
+}
+
+.before-fix{
+    position: inherit;
+}
+
+.footer-container {
+    border-bottom: 1px solid #d9d9d975;
+    padding-bottom: 20px;
+}
+
+.copyright-txt{
+    font-size: 13px;
+}
+
+
+/********* FOOTER RESPONSIVE CSS ************/
+@media screen and (max-width:767px){
+    .foot-title {
+        text-align: center;
+    }
+
+    .responsive-fix{
+        justify-content: center;
+    }
+    
+    .foot-detail-1, 
+    .foot-nav-menu, 
+    .foot-detail-3, 
+    .foot-detail-4 {
+        text-align: center;
+    }
+
+    .column-gap-responsive{
+        margin-bottom: 30px;
+    }
+    .foot-nav-menu {
+        width: 100%;
+    }
+}
