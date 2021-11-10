@@ -6,27 +6,46 @@ import {
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
 import AllWines from './Pages/AllWines/AllWines';
+import Login from './Pages/Login/Login';
+import Register from './Pages/Register/Register';
+import AuthProvider from './context/AuthProvider/AuthProvider';
+import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
+import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <Switch>
+      <AuthProvider>
+        <BrowserRouter>
+          <Switch>
 
-          <Route exact path="/">
-            <Home />
-          </Route>
+            <Route exact path="/">
+              <Home />
+            </Route>
 
-          <Route path="/home">
-            <Home />
-          </Route>
+            <Route path="/home">
+              <Home />
+            </Route>
 
-          <Route path="/allwines">
-            <AllWines />
-          </Route>
+            <Route path="/allwines">
+              <AllWines />
+            </Route>
 
-        </Switch>
-      </BrowserRouter>
+            <PrivateRoute path="/placeorder/:wineID">
+              <PlaceOrder />
+            </PrivateRoute>
+
+            <Route path="/login">
+              <Login />
+            </Route>
+
+            <Route path="/register">
+              <Register />
+            </Route>
+
+          </Switch>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

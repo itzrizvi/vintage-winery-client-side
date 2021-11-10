@@ -20,7 +20,7 @@ const SingleFeaturedWines = ({ featWine }) => {
                 <div className="feat-details">
                     <h3>{name}</h3>
                     <p>Price: <span style={{ color: '#c02323' }}>${price}</span></p>
-                    <Link to=''>
+                    <Link to={`/placeorder/${_id}`}>
                         <button>{flagIcon} Place Order</button>
                     </Link>
                 </div>

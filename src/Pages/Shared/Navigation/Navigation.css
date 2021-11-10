@@ -36,6 +36,11 @@ ul.schedule-list li span {
     overflow: hidden;
     padding: 0px 6px;
     border-left: 2px solid #c02323;
+    transition: .3s;
+}
+
+.top-bar-right-inner a:hover{
+    color: #c02323;
 }
 
 /**NAV MENU CSS**/
@@ -66,7 +71,7 @@ ul.schedule-list li span {
 
 button:focus:not(:focus-visible) {
     box-shadow: none;
-    border: 2px solid #c02323 !important;
+    border-left: 2px solid #c02323 !important;
 }
 
 button.navbar-toggler {

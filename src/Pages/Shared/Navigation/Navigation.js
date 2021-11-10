@@ -4,8 +4,11 @@ import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import './Navigation.css';
+import useAuth from '../../../hooks/useAuth';
 
 const Navigation = () => {
+    // Destructuring from Use Auth
+    const { user, logOut } = useAuth();
     // FontAwesome Icons
     const clockIcon = <FontAwesomeIcon icon={faClock} />;
     const envIcon = <FontAwesomeIcon icon={faEnvelope} />;
@@ -15,6 +18,8 @@ const Navigation = () => {
         borderBottom: '1px solid #c02323',
         color: '#FFFFFF'
     }
+
+
     return (
         <>
             <header className='head-main'>
@@ -31,13 +36,10 @@ const Navigation = () => {
                             </Col>
                             <Col md={5} sm={12} xs={12}>
                                 <div className="top-bar-right-inner">
-                                    {/* {user?.email && <Link to='/home'>
-                                        <img src={user?.photoURL} alt="USERPHOTO" /></Link>} */}
-                                    {/* {user?.email && <Link to='/home'>{user?.displayName}</Link>} */}
-
-                                    <button className='before-effect'>Logout</button>
-                                    <Link to='/login' className='before-effect'>Login</Link>
-                                    <Link to='/register' className='before-effect'>Register</Link>
+                                    {user?.email && <button onClick={logOut} className='before-effect'>Logout</button>}
+                                    {!user?.email && <Link to='/login' className='before-effect'>Login</Link>}
+                                    {!user?.email && <Link to='/register' className='before-effect'>Register</Link>}
+                                    {user?.email && <Link to='/home'>Hi, {user?.displayName}</Link>}
                                 </div>
                             </Col>
                         </Row>

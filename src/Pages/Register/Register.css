@@ -1,0 +1,62 @@
+/********** REGISTER CSS ************/
+.register-form-section{
+    background-image: url('https://i.ibb.co/WzmdQ8z/footer.jpg');
+    background-repeat: repeat-y;
+    padding-bottom: 90px !important;
+}
+
+.register-form-img img {
+    width: 100%;
+}
+
+form.signUpForm input {
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 15px;
+    outline: none;
+    border: 1px solid #c02323;
+    color: #000000;
+    padding: 6px 10px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 6px -2px #c02323;
+}
+
+form.signUpForm button, button.gSignin-btn {
+    background-color: transparent;
+    color: #c02323;
+    text-transform: uppercase;
+    border: 1px solid #c02323;
+    outline: none;
+    padding: 5px 33px;
+    display: inline-block;
+    margin-top: 15px;
+    transition: .5s;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+form.signUpForm button:hover, button.gSignin-btn:hover{
+    background-color: #c02323;
+    color: #FFFFFF;
+}
+
+form.signUpForm p {
+    margin-top: 14px;
+    font-weight: 600;
+}
+
+form.signUpForm p a {
+    color: #c02323;
+}
+
+.register-form-img {
+    margin-top: 70px;
+}
+
+/****** RESPONSIVE CSS*******/
+@media screen and (max-width:575px){
+    .register-form-img {
+        margin-top: 0px;
+    }
+}
