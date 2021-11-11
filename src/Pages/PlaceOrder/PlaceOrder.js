@@ -40,7 +40,6 @@ const PlaceOrder = () => {
     // PlaceOrder Handler
     const handleOrder = e => {
         e.preventDefault();
-
         const orderData = {
             ...orderInfo,
             wineName: wineDetail.name,
@@ -49,7 +48,22 @@ const PlaceOrder = () => {
             orderStatus: 'Pending'
 
         }
-        console.log(orderData);
+        // POSTING ORDER BY API
+        fetch('http://localhost:5000/orders', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(orderData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    alert('You Have placed an Order Successfully!!!');
+                    e.target.reset();
+                }
+
+            })
 
 
     };
@@ -95,8 +109,6 @@ const PlaceOrder = () => {
                                 </form> : <Spinner animation="grow" />}
                                 <Link to="/allwines" className="explore-btn text-center mb-5"
                                     style={{ width: '90%', color: '#c02323', margin: 'auto', display: 'block' }}>Explore More Wines</Link>
-                                {/* {registerSuccess && <Alert variant='success'>You Have Registered Successfully!!!</Alert>}
-                                {authError && <Alert variant='danger'>{authError}</Alert>} */}
                             </div>
                         </Col>
                     </Row>

@@ -46,7 +46,7 @@ const useFirebase = () => {
                 const newUser = { email, displayName: name };
                 setUser(newUser);
                 // Save User
-                // saveUser(email, name, 'POST');
+                saveUser(email, name, 'POST');
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(() => {
@@ -88,7 +88,7 @@ const useFirebase = () => {
                 console.log(user)
                 setAuthError('')
                 // Save User
-                // saveUser(user.email, user.displayName, 'PUT');
+                saveUser(user.email, user.displayName, 'PUT');
             }).catch((error) => {
                 setAuthError(error.message);
             })
@@ -117,6 +117,19 @@ const useFirebase = () => {
             // An error happened.
         })
             .finally(() => setIsLoading(false));
+    }
+
+    // Save Users Data
+    const saveUser = (email, displayName, method) => {
+        const user = { email, displayName };
+        fetch('http://localhost:5000/users', {
+            method: method,
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(user),
+        })
+            .then()
     }
 
     return {
