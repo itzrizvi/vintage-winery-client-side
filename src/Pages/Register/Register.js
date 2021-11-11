@@ -10,11 +10,13 @@ const Register = () => {
     // Fontawesome ICons
     const glassIcon = <FontAwesomeIcon icon={faGlassCheers} />
     // Destructure Firebase Functions through USE AUTH HOOK
-    const { registerNewUser, isLoading, authError, user } = useAuth();
+    const { registerNewUser, isLoading, authError } = useAuth();
     // History Hook for redirecting
     const history = useHistory();
     // STATE FOR Register DATA 
     const [registerData, setRegisterData] = useState({});
+    // State for Success Message
+    const [registerSuccess, setRegisterSuccess] = useState(false);
     // Setting values from form to state
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -31,9 +33,9 @@ const Register = () => {
             alert('Your Password Didn\'t Matched');
             return;
         }
-        console.log(registerData)
-        registerNewUser(registerData.email, registerData.password, registerData.name, history);
 
+        registerNewUser(registerData.email, registerData.password, registerData.name, history);
+        setRegisterSuccess(true);
     }
     return (
         <>
@@ -55,7 +57,7 @@ const Register = () => {
                                     <button type="submit">Register</button>
                                     <p className='already-have-ac-txt'>Already have an account? <Link to='/login'>Login Here</Link> </p>
                                 </form> : <Spinner animation="grow" />}
-                                {user?.email && <Alert variant='success'>You Have Registered Successfully!!!</Alert>}
+                                {registerSuccess && <Alert variant='success'>You Have Registered Successfully!!!</Alert>}
                                 {authError && <Alert variant='danger'>{authError}</Alert>}
                             </div>
                         </Col>

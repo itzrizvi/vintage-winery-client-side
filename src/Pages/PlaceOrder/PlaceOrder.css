@@ -1,0 +1,99 @@
+/********** PLACE ORDER CSS **********/
+.wine-detail-inner-main, .order-form {
+    box-shadow: 2px 2px 5px -1px #c02323;
+    padding-top: 18px;
+    border: 1px solid transparent;
+    transition: .5s;
+    border-radius: 8px;
+    background-image: url('https://i.ibb.co/WzmdQ8z/footer.jpg');
+}
+
+.wine-detail-inner-main:hover, .order-form:hover {
+    border: 1px solid #c02323;
+}
+
+.wine-detail-img img {
+    width: 70px;
+    margin: auto;
+    display: block;
+    height: auto;
+}
+
+.wine-detail-inner {
+    padding: 20px;
+}
+
+.wine-detail-title h2 {
+    font-size: 25px;
+    padding: 8px 0px;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #c02323;
+}
+
+.wine-detail-overview h3 {
+    font-size: 19px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.wine-detail-overview p {
+    font-size: 15px;
+    font-weight: 400;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    line-height: 26px;
+}
+
+.order-form{
+    padding: 49px 20px;
+}
+
+.order-form h2 {
+    font-size: 25px;
+    padding-top: 35px;
+    color: #c02323;
+    font-weight: 400;
+    border: 4px solid transparent;
+    border-bottom: 4px solid #2e2e2e;
+}
+
+form.placeOrder-form input {
+    width: 90%;
+    display: block;
+    margin: auto;
+    margin-bottom: 16px;
+    border: none;
+    box-shadow: 2px 2px 5px -1px #c02323;
+    padding: 5px 10px;
+    border-radius: 3px;
+    outline: none;
+}
+
+form.placeOrder-form button {
+    width: 90%;
+    margin: auto;
+    background-color: transparent;
+    color: #c02323;
+    text-transform: uppercase;
+    border: 1px solid #c02323;
+    outline: none;
+    padding: 5px 33px;
+    display: block;
+    margin-top: 30px;
+    transition: .5s;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+form.placeOrder-form button:hover{
+    background-color: #c02323;
+    color: #FFFFFF;
+}
+
+
+@media screen and (max-width:575px){
+    .wine-detail-inner-main{
+        margin-bottom: 30px;
+    }
+}
