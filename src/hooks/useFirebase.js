@@ -24,6 +24,7 @@ const useFirebase = () => {
     // All States For Firebase
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(true);
+    const [admin, setAdmin] = useState(false);
     const [authError, setAuthError] = useState('');
 
     // Clear Error 
@@ -131,8 +132,17 @@ const useFirebase = () => {
             .then()
     }
 
+    // Fetching For Admin Role user
+    useEffect(() => {
+        const url = `http://localhost:5000/users/${user.email}`;
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setAdmin(data.admin));
+    }, [user.email]);
+
     return {
         user,
+        admin,
         isLoading,
         authError,
         registerNewUser,

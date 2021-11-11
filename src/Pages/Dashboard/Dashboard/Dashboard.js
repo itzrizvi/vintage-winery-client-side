@@ -35,12 +35,13 @@ import ManageWines from '../ManageWines/ManageWines';
 import MyOrders from '../MyOrders/MyOrders';
 import GiveReview from '../GiveReview/GiveReview';
 import Payments from '../Payments/Payments';
+import AdminRoute from '../../AdminRoute/AdminRoute';
 
 
 const drawerWidth = 240;
 function Dashboard(props) {
     // Use Auth
-    const { logOut, user } = useAuth();
+    const { logOut, user, admin } = useAuth();
     // Use Route Match
     let { path, url } = useRouteMatch();
     const { window } = props;
@@ -67,38 +68,43 @@ function Dashboard(props) {
                         Welcome
                     </ListItemText>
                 </ListItem>
-                <ListItem as={Link} to={`${url}/manageallorders`} className='list-item' >
+
+                {admin && <ListItem as={Link} to={`${url}/manageallorders`} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <ManageAccountsIcon />
                     </ListItemIcon>
                     <ListItemText className="dashboard-side-links">
                         Manage All Orders
                     </ListItemText>
-                </ListItem>
-                <ListItem as={Link} to={`${url}/addnewwine`} className='list-item' >
+                </ListItem>}
+
+                {admin && <ListItem as={Link} to={`${url}/addnewwine`} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <AddShoppingCartIcon />
                     </ListItemIcon>
                     <ListItemText className="dashboard-side-links">
                         Add New Wine
                     </ListItemText>
-                </ListItem>
-                <ListItem as={Link} to={`${url}/makeadmin`} className='list-item' >
+                </ListItem>}
+
+                {admin && <ListItem as={Link} to={`${url}/makeadmin`} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <AdminPanelSettingsIcon />
                     </ListItemIcon>
                     <ListItemText className="dashboard-side-links">
                         Make an Admin
                     </ListItemText>
-                </ListItem>
-                <ListItem as={Link} to={`${url}/managewines`} className='list-item' >
+                </ListItem>}
+
+                {admin && <ListItem as={Link} to={`${url}/managewines`} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <SettingsIcon />
                     </ListItemIcon>
                     <ListItemText className="dashboard-side-links">
                         Manage Wines
                     </ListItemText>
-                </ListItem>
+                </ListItem>}
+
                 <ListItem as={Link} to={`${url}/myorders`} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <CardGiftcardIcon />
@@ -107,6 +113,7 @@ function Dashboard(props) {
                         My Orders
                     </ListItemText>
                 </ListItem>
+
                 <ListItem as={Link} to={`${url}/givereview`} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <ReviewsIcon />
@@ -115,6 +122,7 @@ function Dashboard(props) {
                         Give a Review
                     </ListItemText>
                 </ListItem>
+
                 <ListItem as={Link} to={`${url}/payments`} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <PaymentsIcon />
@@ -123,6 +131,7 @@ function Dashboard(props) {
                         Payments
                     </ListItemText>
                 </ListItem>
+
                 <ListItem as={Link} to="/home" className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <ExitToAppIcon />
@@ -131,6 +140,7 @@ function Dashboard(props) {
                         Go Back To Home
                     </ListItemText>
                 </ListItem>
+
                 <ListItem as={Button} onClick={logOut} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <LogoutIcon />
@@ -213,18 +223,18 @@ function Dashboard(props) {
                     <Route exact path={path}>
                         <Welcome />
                     </Route>
-                    <Route path={`${path}/manageallorders`}>
+                    <AdminRoute path={`${path}/manageallorders`}>
                         <ManageAllOrders />
-                    </Route>
-                    <Route path={`${path}/addnewwine`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/addnewwine`}>
                         <AddNewWine />
-                    </Route>
-                    <Route path={`${path}/makeadmin`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/makeadmin`}>
                         <MakeAdmin />
-                    </Route>
-                    <Route path={`${path}/managewines`}>
+                    </AdminRoute>
+                    <AdminRoute path={`${path}/managewines`}>
                         <ManageWines />
-                    </Route>
+                    </AdminRoute>
                     <Route path={`${path}/myorders`}>
                         <MyOrders />
                     </Route>
