@@ -1,1 +1,53 @@
 /********* Make Admin CSS ***********/
+
+.makeadmin-form-inner form input {
+    width: 50%;
+    margin: auto;
+    display: block;
+    padding: 5px 10px;
+    border: 1px solid #c02323;
+    outline: none;
+    margin-bottom: 24px;
+    box-shadow: 2px 2px 4px 0px #c02323;
+}
+
+.makeadmin-form-inner form button {
+    width: 250px;
+    margin-bottom: 50px;
+    background-color: transparent;
+    color: #c02323;
+    text-transform: uppercase;
+    border: 1px solid #c02323;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 15px;
+    transition: .5s;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.makeadmin-form-inner form button:hover, 
+.makeadmin-form-inner form button:focus, 
+.makeadmin-form-inner form button:active{
+    color: #FFFFFF !important;
+    background-color: #c02323;
+    box-shadow: none;
+    border: 1px solid transparent !important;
+}
+
+.makeadmin-form-inner form button:active:focus{
+    box-shadow: none !important;
+}
+
+
+/************ MAKE ADMIN RESPONSIVE CSS **************/
+@media screen and (max-width:766px){
+    .makeadmin-form-inner form input{
+        width: 250px;
+    }
+    .makeadmin-form-inner form button {
+        width: 150px;
+    }
+}

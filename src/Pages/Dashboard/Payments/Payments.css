@@ -1,0 +1,11 @@
+/*********** Payment CSS ***********/
+
+.payment-inner {
+    padding: 80px 0px;
+}
+
+.payment-inner h2 {
+    font-size: 27px;
+    font-weight: 700;
+    text-shadow: 1px 0px 1px #c02323;
+}

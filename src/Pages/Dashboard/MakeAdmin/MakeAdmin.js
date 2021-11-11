@@ -38,7 +38,7 @@ const MakeAdmin = () => {
 
     return (
         <>
-            <div className="make-admin-section">
+            <div className="make-admin-section py-5">
                 <div className="section-title">
                     <p>{glassIcon}</p>
                     <h2>Make an Admin</h2>
