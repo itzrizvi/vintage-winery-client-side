@@ -1,0 +1,30 @@
+/************** Welcome CSS ****************/
+.welcome-inner h2 {
+    font-size: 30px;
+    font-weight: 600;
+    margin-bottom: 17px;
+}
+
+.welcome-inner h3 {
+    font-size: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.welcome-inner h3 span{
+    color: #c02323;
+}
+
+.welcome-inner p {
+    width: 50%;
+    margin: auto;
+    line-height: 31px;
+}
+
+
+/*********** Welcome Responsive CSS ************/
+@media screen and (max-width:600px){
+    .welcome-inner p {
+        width: 90%;
+    }
+}

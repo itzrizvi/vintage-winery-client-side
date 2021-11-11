@@ -1,0 +1,76 @@
+/********** DASHBOARD CSS **********/
+
+main.MuiBox-root.css-1v5u2yv {
+    padding: 0px;
+    background-image: url('https://i.ibb.co/WzmdQ8z/footer.jpg');
+    box-shadow: 0px 3px 5px 0px #c02323;
+}
+.css-zxtyt4-MuiPaper-root-MuiAppBar-root{
+    background-color: #2e2e2e !important;
+}
+.css-12i7wg6-MuiPaper-root-MuiDrawer-paper {
+    background-color: #2e2e2e !important;
+}
+
+hr.MuiDivider-root.MuiDivider-fullWidth.css-9mgopn-MuiDivider-root {
+    height: 3px;
+    background-color: #ff0202 !important;
+    color: #FFFFFF;
+    margin-top: -54px;
+}
+
+.css-d9ml5t-MuiDrawer-docked .MuiDrawer-paper{
+    box-shadow: 2px 0px 4px 0px #c02323;
+}
+
+header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root{
+    box-shadow: 0px 2px 3px 0px #c02323;
+}
+
+.dashboard-side-links {
+    color: #FFFFFF !important;
+}
+.list-item{
+    transition: .5s;
+}
+.list-item:hover{
+    background-color: #FFFFFF !important;
+}
+
+.list-item:hover > .dashboard-side-links{
+    color: #2e2e2e !important;
+} 
+
+.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation16.MuiDrawer-paper.MuiDrawer-paperAnchorLeft {
+    background-color: #2e2e2e !important;
+}
+
+span.MuiTypography-root.MuiListItemText-primary {
+    font-size: 14px;
+}
+
+button.list-item {
+    outline: none;
+    background-color: #2e2e2e;
+    border: none;
+    border-radius: 0px !important;
+}
+
+button.list-item:active:focus{
+    box-shadow: none !important;
+    color: #2e2e2e !important;
+}
+
+button.list-item:active, button.list-item:focus{
+    background-color: #FFFFFF;
+    border: none !important;
+}
+
+
+/********* DASHBOARD RESPONSIVE CSS **********/
+@media screen and (max-width:590px){
+    .dashboard-logo{
+        text-align: center;
+        padding-bottom: 10px;
+    }
+}

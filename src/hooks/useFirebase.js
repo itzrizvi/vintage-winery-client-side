@@ -85,7 +85,6 @@ const useFirebase = () => {
                 const destination = location?.state?.from || '/home';
                 history.replace(destination);
                 const user = result.user;
-                console.log(user)
                 setAuthError('')
                 // Save User
                 saveUser(user.email, user.displayName, 'PUT');
