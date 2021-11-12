@@ -1,0 +1,40 @@
+/************* ADD NEW WINE CSS *************/
+.add-new-wine-form-inner {
+    margin-bottom: 50px;
+}
+
+.add-new-wine-form-inner form input,
+.add-new-wine-form-inner form textarea {
+    width: 50%;
+    display: block;
+    margin: auto;
+    margin-bottom: 20px;
+    padding: 6px 10px;
+    border: 1px solid #c02323;
+    outline: none;
+    box-shadow: 3px 3px 7px -2px #c02323;
+}
+
+input.add-wine-btn {
+    border: 1px solid #c02323;
+    background-color: transparent;
+    color: #2e2e2e;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: .5s;
+}
+
+input.add-wine-btn:hover{
+    background-color: #2e2e2e;
+    color: #FFFFFF;
+}
+
+
+/*********** RESPONSIVE CSS *************/
+@media screen and (max-width:800px){
+    .add-new-wine-form-inner form input,
+.add-new-wine-form-inner form textarea{
+    width: 90%;
+}
+}

@@ -114,12 +114,18 @@ button.dlt-order-btn:hover{
     }
 }
 
-@media screen and (max-width:650px){
+@media screen and (max-width:599px){
     .clientdetails p {
         font-size: 12px;
         font-weight: 600;
     }
     .manage-single-order-inner{
         padding: 15px;
+    }
+}
+
+@media screen and (max-width:575px){
+    button.shipped-btn{
+        margin-bottom: 20px;
     }
 }

@@ -13,7 +13,7 @@ import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
+import WineBarIcon from '@mui/icons-material/WineBar';
 import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
 import SettingsIcon from '@mui/icons-material/Settings';
 import CardGiftcardIcon from '@mui/icons-material/CardGiftcard';
@@ -80,7 +80,7 @@ function Dashboard(props) {
 
                 {admin && <ListItem as={Link} to={`${url}/addnewwine`} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
-                        <AddShoppingCartIcon />
+                        <WineBarIcon />
                     </ListItemIcon>
                     <ListItemText className="dashboard-side-links">
                         Add New Wine
