@@ -59,7 +59,7 @@ const Navigation = () => {
                                     <Navbar.Collapse className='justify-content-end nav-menu'>
                                         <Nav.Link activeStyle={activeLink} as={NavLink} to="/home">Home</Nav.Link>
                                         <Nav.Link activeStyle={activeLink} as={NavLink} to="/allwines">All Wines</Nav.Link>
-                                        <Nav.Link activeStyle={activeLink} as={NavLink} to="/dashboard">Dashboard</Nav.Link>
+                                        {user?.email && <Nav.Link activeStyle={activeLink} as={NavLink} to="/dashboard">Dashboard</Nav.Link>}
                                     </Navbar.Collapse>
                                 </Navbar>
                             </Row>
