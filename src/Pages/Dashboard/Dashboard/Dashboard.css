@@ -37,6 +37,13 @@ header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root{
     background-color: #FFFFFF !important;
 }
 
+.list-item:focus {
+    background-color: #ffffff !important;
+}
+.list-item:focus > .dashboard-side-links {
+   color: #000000 !important;
+}
+
 .list-item:hover > .dashboard-side-links{
     color: #2e2e2e !important;
 } 
