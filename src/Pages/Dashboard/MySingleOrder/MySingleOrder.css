@@ -1,0 +1,68 @@
+/************** MY SINGLE ORDER CSS *************/
+.single-user-order-inner {
+    border: 1px solid #c02323;
+    padding: 30px;
+    margin-bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 2px 2px 5px -2px #c02323;
+}
+
+.single-user-order-img img {
+    width: auto;
+    height: 147px;
+}
+
+.single-user-order-details h3 {
+    color: #2e2e2e;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.single-user-order-details h4 {
+    font-size: 15px;
+}
+
+.single-user-order-details h4 span {
+    color: #c02323;
+    font-weight: 600;
+}
+
+.single-user-order-details p {
+    font-size: 15px;
+    color: #2e2e2e;
+}
+
+.single-user-order-details p span {
+    color: #c02323;
+    font-weight: 600;
+}
+
+button.cancel-order-btn {
+    border: 1px solid #c02323;
+    background-color: transparent;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: .5s;
+}
+
+button.cancel-order-btn:hover {
+    background-color: #c02323;
+    color: #FFFFFF;
+}
+
+
+/************* RESPONSIVE CSS **************/
+@media screen and (max-width:350px){
+    .single-user-order-details h3{
+        font-size: 12px;
+    }
+    .single-user-order-details h4 {
+        font-size: 13px;
+    }
+    .single-user-order-details p {
+        font-size: 13px;
+    }
+}

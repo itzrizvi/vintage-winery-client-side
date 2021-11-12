@@ -32,9 +32,11 @@ function App() {
               <AllWines />
             </Route>
 
+            {/* Private Routes */}
             <PrivateRoute path="/placeorder/:wineID">
               <PlaceOrder />
             </PrivateRoute>
+
             <PrivateRoute path="/dashboard">
               <Dashboard />
             </PrivateRoute>
