@@ -1,0 +1,30 @@
+/*********** REVIEW SINGLE CSS ***********/
+.give-review-section {
+    margin-bottom: 40px;
+}
+
+.single-rating-inner {
+    background-image: url('https://i.ibb.co/WzmdQ8z/footer.jpg');
+    padding: 20px 15px;
+    margin-bottom: 26px;
+    border-radius: 6px;
+    box-shadow: 2px 2px 5px -2px #c02323;
+}
+
+.single-rating-inner p {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.single-rating-inner span {
+    font-size: 16px;
+    color: #c02323;
+    margin-bottom: 6px;
+}
+
+.single-rating-inner h3 {
+    font-size: 15px;
+    font-weight: 500;
+}

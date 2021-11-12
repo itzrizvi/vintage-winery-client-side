@@ -1,1 +1,39 @@
 /*********** GIVE REVIEW CSS ************/
+.rating-form-inner form input,
+.rating-form-inner form textarea {
+    display: block;
+    width: 50%;
+    margin: auto;
+    margin-bottom: 16px;
+    outline: none;
+    border: 1px solid #c02323;
+    padding: 5px 10px;
+    box-shadow: 2px 2px 5px -2px #c02323;
+}
+
+input.rate-now-btn {
+    background-color: transparent;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: .5s;
+}
+
+input.rate-now-btn:hover {
+    background-color: #c02323;
+    color: #FFFFFF;
+}
+
+.rating-form-inner {
+    margin-bottom: 50px;
+}
+
+
+/*********** RESPONSIVE CSS *************/
+@media screen and (max-width:830px){
+    .rating-form-inner form input,
+    .rating-form-inner form textarea{
+        width: 90%;
+    }
+}

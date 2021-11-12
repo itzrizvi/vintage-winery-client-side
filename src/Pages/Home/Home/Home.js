@@ -5,6 +5,7 @@ import Banner from '../Banner/Banner';
 import About from '../About/About';
 import Experts from '../Experts/Experts';
 import FeaturedWines from '../FeaturedWines/FeaturedWines';
+import ReviewArea from '../ReviewArea/ReviewArea';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Banner />
             <About />
             <FeaturedWines />
+            <ReviewArea />
             <Experts />
             <Footer />
         </>
