@@ -1,1 +1,125 @@
 /********* Manage Single Order *********/
+.manage-single-order-inner {
+    padding: 20px;
+    border: 1px solid #c02323;
+    background-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 1px 1px 5px -1px #c02323;
+}
+
+.manage-single-img img {
+    width: auto;
+    height: 150px;
+}
+
+.manage-single-img {
+    margin-bottom: 20px;
+}
+
+button.shipped-btn {
+    color: #2e2e2e;
+    text-transform: uppercase;
+    border: 1px solid #3de588cc;
+    outline: none;
+    padding: 5px 8px;
+    margin-top: 15px;
+    transition: .3s;
+    text-decoration: none;
+    font-size: 9px;
+    background-color: #fdfdfd;
+    font-weight: 600;
+    display: block;
+    float: right;
+    overflow: hidden;
+}
+
+button.shipped-btn:hover{
+    background-color: #2e2e2e;
+    color: #FFFFFF;
+    border: 1px solid transparent;
+    box-shadow: 1px 1px 5px 0px #c02323;
+}
+
+.clientdetails h4 {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 18px;
+}
+
+.clientdetails h4 span{
+    color: #c02323;
+}
+
+.clientdetails p {
+    font-size: 13px;
+    padding: 0px;
+    margin: 6px 0px;
+    font-weight: 600;
+}
+
+button.dlt-order-btn {
+    color: #2e2e2e;
+    text-transform: uppercase;
+    border: 1px solid #c02323;
+    outline: none;
+    padding: 5px 8px;
+    margin-top: 15px;
+    transition: .3s;
+    text-decoration: none;
+    font-size: 11px;
+    background-color: #fdfdfd;
+    font-weight: 600;
+    display: block;
+}
+
+button.dlt-order-btn:hover{
+    background-color: #c02323;
+    color: #FFFFFF;
+}
+
+
+/*********** RESPONSIVE CSS *************/
+@media screen and (max-width:950px){
+    .clientdetails p {
+        font-size: 12px;
+        font-weight: 100;
+    }
+    .manage-single-order-inner{
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:842px){
+    .clientdetails p {
+        font-size: 10px;
+        font-weight: 100;
+    }
+}
+
+@media screen and (max-width:767px){
+    .clientdetails p {
+        font-size: 12px;
+        font-weight: 500;
+    }
+    .manage-single-order-inner{
+        padding: 15px;
+    }
+}
+@media screen and (max-width:650px){
+    .clientdetails p {
+        font-size: 10px;
+        font-weight: 100;
+    }
+    .manage-single-order-inner{
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width:650px){
+    .clientdetails p {
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .manage-single-order-inner{
+        padding: 15px;
+    }
+}

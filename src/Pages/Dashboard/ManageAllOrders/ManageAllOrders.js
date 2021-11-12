@@ -27,6 +27,7 @@ const ManageAllOrders = () => {
                         {
                             allOrders.map(singleOrder => <ManageSingleOrder
                                 key={singleOrder._id}
+                                setAllOrders={setAllOrders}
                                 allOrders={allOrders}
                                 singleOrder={singleOrder}></ManageSingleOrder>)
                         }
