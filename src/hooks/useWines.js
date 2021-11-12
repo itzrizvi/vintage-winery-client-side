@@ -9,7 +9,7 @@ const useWines = () => {
         fetch('http://localhost:5000/wines')
             .then(res => res.json())
             .then(data => setWines(data));
-    }, []);
+    }, [wines]);
 
     // Return products for destructuring to other components
     return { wines, setWines };

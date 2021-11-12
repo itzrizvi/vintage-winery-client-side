@@ -176,7 +176,7 @@ function Dashboard(props) {
                         <MenuIcon />
 
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
+                    <Typography variant="h6" style={{ fontSize: '15px', textTransform: 'uppercase', letterSpacing: '2px', marginTop: '5px' }} noWrap component="div">
                         {user.displayName}'s Dashboard
                     </Typography>
                 </Toolbar>

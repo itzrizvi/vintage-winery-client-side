@@ -1,10 +1,39 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGlassCheers } from '@fortawesome/free-solid-svg-icons';
+import './ManageWines.css';
+import { Alert, Container, Row } from 'react-bootstrap';
+import useWines from '../../../hooks/useWines';
+import ManageSingleWine from '../ManageSingleWine/ManageSingleWine';
+
 
 const ManageWines = () => {
+    // Fontawesome ICons
+    const glassIcon = <FontAwesomeIcon icon={faGlassCheers} />
+    // State For Delete Confirm Message
+    const [wineDelete, setWineDelete] = useState(false);
+    // Using Use Wines Hook
+    const { wines } = useWines();
     return (
-        <div>
-            <h2>Manage Wines</h2>
-        </div>
+        <>
+            <div className="manage-wines-section py-4">
+                <div className="section-title">
+                    <p>{glassIcon}</p>
+                    <h2>Manage Wines</h2>
+                </div>
+                <Container>
+                    {wineDelete && <Alert variant='success'>You Have Deleted a Wine Successfully!!!</Alert>}
+                    <Row>
+                        {
+                            wines.map(wineSingle => <ManageSingleWine
+                                key={wineSingle._id}
+                                setWineDelete={setWineDelete}
+                                wineSingle={wineSingle}></ManageSingleWine>)
+                        }
+                    </Row>
+                </Container>
+            </div>
+        </>
     );
 };
 
