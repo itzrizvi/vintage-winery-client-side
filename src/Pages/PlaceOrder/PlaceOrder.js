@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Col, Container, Row, Spinner } from 'react-bootstrap';
+import { Col, Container, Row, Spinner, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlassCheers } from '@fortawesome/free-solid-svg-icons';
 import { Link, useParams } from 'react-router-dom';
@@ -9,6 +9,8 @@ import Navigation from '../Shared/Navigation/Navigation';
 import './PlaceOrder.css';
 
 const PlaceOrder = () => {
+    // State for confirmation messsage
+    const [orderPlaced, setOrderPlaced] = useState(false);
     // Fontawesome ICons
     const glassIcon = <FontAwesomeIcon icon={faGlassCheers} />
     // Using useParams Hook for dynamic ID
@@ -59,7 +61,7 @@ const PlaceOrder = () => {
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    alert('You Have placed an Order Successfully!!!');
+                    setOrderPlaced(true);
                     e.target.reset();
                 }
 
@@ -98,7 +100,8 @@ const PlaceOrder = () => {
                         <Col md={6} sm={6} xs={12}>
                             <div className="order-form">
                                 <h2 className='text-center text-uppercase'>Details For Order</h2>
-                                {/* Registration Form Area */}
+                                {orderPlaced && <Alert className="text-center" variant='success'>You Have Placed an Order Successfully!!!</Alert>}
+                                {/* PlaceOrder Form Area */}
                                 {!isLoading ? <form onSubmit={handleOrder} className='my-5 placeOrder-form'>
                                     <input type="text" onBlur={handleOnBlur} defaultValue={user.displayName} name="clientName" id="name" placeholder='Type your name...' required />
                                     <input type="email" onBlur={handleOnBlur} defaultValue={user.email} name="clientEmail" id="email" placeholder='Type your email...' required />
