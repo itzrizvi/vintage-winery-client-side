@@ -21,7 +21,7 @@ const PlaceOrder = () => {
     // State for Wine Details
     const [wineDetail, setWineDetail] = useState([]);
     useEffect(() => {
-        const url = `http://localhost:5000/wines/${wineID}`;
+        const url = `https://fierce-forest-71065.herokuapp.com/wines/${wineID}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setWineDetail(data));
@@ -51,7 +51,7 @@ const PlaceOrder = () => {
 
         }
         // POSTING ORDER BY API
-        fetch('http://localhost:5000/orders', {
+        fetch('https://fierce-forest-71065.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

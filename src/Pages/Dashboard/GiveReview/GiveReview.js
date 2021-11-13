@@ -18,7 +18,7 @@ const GiveReview = () => {
 
     // Review Handler Function
     const handleReview = (data) => {
-        fetch('http://localhost:5000/ratings', {
+        fetch('https://fierce-forest-71065.herokuapp.com/ratings', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

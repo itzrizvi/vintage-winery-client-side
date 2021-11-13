@@ -2,13 +2,13 @@ import React from 'react';
 import { Col, Row } from 'react-bootstrap';
 import './ManageSingleWine.css';
 
-const ManageSingleWine = ({ wineSingle, setWineDelete }) => {
+const ManageSingleWine = ({ wineSingle, setWineDelete, setWines, wines }) => {
 
     // Wine Delete Handler
     const handleWineDelete = id => {
         const confirmation = window.confirm('Are you sure you want to delete this Wine???');
         if (confirmation) {
-            const url = `http://localhost:5000/wines/${id}`;
+            const url = `https://fierce-forest-71065.herokuapp.com/wines/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -16,6 +16,9 @@ const ManageSingleWine = ({ wineSingle, setWineDelete }) => {
                 .then(data => {
                     if (data.deletedCount > 0) {
                         setWineDelete(true);
+                        // Filter wines for rest wines showing
+                        const restWines = wines.filter(wine => wine._id !== id);
+                        setWines(restWines);
                     }
 
                 });

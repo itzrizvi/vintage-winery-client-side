@@ -122,7 +122,7 @@ const useFirebase = () => {
     // Save Users Data
     const saveUser = (email, displayName, method) => {
         const user = { email, displayName };
-        fetch('http://localhost:5000/users', {
+        fetch('https://fierce-forest-71065.herokuapp.com/users', {
             method: method,
             headers: {
                 'Content-Type': 'application/json'
@@ -134,7 +134,7 @@ const useFirebase = () => {
 
     // Fetching For Admin Role user
     useEffect(() => {
-        const url = `http://localhost:5000/users/${user.email}`;
+        const url = `https://fierce-forest-71065.herokuapp.com/users/${user.email}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setAdmin(data.admin));

@@ -12,7 +12,7 @@ const Wines = () => {
     const glassIcon = <FontAwesomeIcon icon={faGlassCheers} />
 
     // USE WINE HOOK
-    const { wines } = useWines({});
+    const { wines } = useWines();
 
     // Data Rendering Spinner
     const { isLoading } = useAuth();

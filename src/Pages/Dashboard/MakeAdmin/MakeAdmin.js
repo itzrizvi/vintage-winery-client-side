@@ -20,7 +20,7 @@ const MakeAdmin = () => {
         e.preventDefault();
         // Fetching for admin role
         const user = { email };
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://fierce-forest-71065.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

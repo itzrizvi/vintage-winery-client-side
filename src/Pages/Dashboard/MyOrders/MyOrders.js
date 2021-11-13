@@ -15,7 +15,7 @@ const MyOrders = () => {
     const [orders, setOrders] = useState([]);
     // Fetch orders by dynamic param user email
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${user.email}`)
+        fetch(`https://fierce-forest-71065.herokuapp.com/orders/${user.email}`)
             .then(res => res.json())
             .then(data => setOrders(data));
     }, [user.email])

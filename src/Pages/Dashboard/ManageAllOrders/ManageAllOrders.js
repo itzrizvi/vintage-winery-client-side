@@ -11,7 +11,7 @@ const ManageAllOrders = () => {
     const [allOrders, setAllOrders] = useState([]);
     // All Order Fetching for Admin
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://fierce-forest-71065.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setAllOrders(data));
     }, [allOrders]);

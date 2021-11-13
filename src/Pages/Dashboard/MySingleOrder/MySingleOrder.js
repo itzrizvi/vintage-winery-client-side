@@ -9,7 +9,7 @@ const MySingleOrder = ({ userOrder, setOrders, allOrders }) => {
     const handleCancelOrder = id => {
         const confirmation = window.confirm('Are you sure you want to delete this order???');
         if (confirmation) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://fierce-forest-71065.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE',
             })

@@ -13,7 +13,7 @@ const ManageWines = () => {
     // State For Delete Confirm Message
     const [wineDelete, setWineDelete] = useState(false);
     // Using Use Wines Hook
-    const { wines } = useWines();
+    const { wines, setWines } = useWines();
     return (
         <>
             <div className="manage-wines-section py-4">
@@ -27,6 +27,8 @@ const ManageWines = () => {
                         {
                             wines.map(wineSingle => <ManageSingleWine
                                 key={wineSingle._id}
+                                wines={wines}
+                                setWines={setWines}
                                 setWineDelete={setWineDelete}
                                 wineSingle={wineSingle}></ManageSingleWine>)
                         }

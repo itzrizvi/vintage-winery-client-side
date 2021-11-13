@@ -12,7 +12,7 @@ const ReviewArea = () => {
     const [ratings, setRatings] = useState([]);
     // Fetch Ratings
     useEffect(() => {
-        fetch('http://localhost:5000/ratings')
+        fetch('https://fierce-forest-71065.herokuapp.com/ratings')
             .then(res => res.json())
             .then(data => setRatings(data));
     }, [])

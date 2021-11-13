@@ -6,10 +6,10 @@ const useWines = () => {
     const [wines, setWines] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/wines')
+        fetch('https://fierce-forest-71065.herokuapp.com/wines')
             .then(res => res.json())
             .then(data => setWines(data));
-    }, [wines]);
+    }, []);
 
     // Return products for destructuring to other components
     return { wines, setWines };

@@ -14,7 +14,7 @@ const AddNewWine = () => {
     const [addWine, setAddWine] = useState(false);
     // Add Wine Function
     const handleAddWine = (data) => {
-        fetch('http://localhost:5000/wines', {
+        fetch('https://fierce-forest-71065.herokuapp.com/wines', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
