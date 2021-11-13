@@ -12,6 +12,7 @@ import AuthProvider from './context/AuthProvider/AuthProvider';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -47,6 +48,10 @@ function App() {
 
             <Route path="/register">
               <Register />
+            </Route>
+
+            <Route path="*">
+              <NotFound />
             </Route>
 
           </Switch>
