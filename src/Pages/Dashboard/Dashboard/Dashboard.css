@@ -25,6 +25,7 @@ hr.MuiDivider-root.MuiDivider-fullWidth.css-9mgopn-MuiDivider-root {
 
 header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root{
     box-shadow: 0px 2px 3px 0px #c02323;
+    background-color: #2e2e2e !important;
 }
 
 .dashboard-side-links {
@@ -71,6 +72,16 @@ button.list-item:active:focus{
 button.list-item:active, button.list-item:focus{
     background-color: #FFFFFF;
     border: none !important;
+}
+
+.MuiDrawer-paper{
+    background-color: #2e2e2e !important;
+}
+
+hr.MuiDivider-root {
+    margin-top: -54px;
+    color: #c02323;
+    height: 3px;
 }
 
 
