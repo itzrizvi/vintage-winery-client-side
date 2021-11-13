@@ -105,32 +105,32 @@ function Dashboard(props) {
                     </ListItemText>
                 </ListItem>}
 
-                <ListItem as={Link} to={`${url}/myorders`} className='list-item' >
+                {!admin && <ListItem as={Link} to={`${url}/myorders`} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <CardGiftcardIcon />
                     </ListItemIcon>
                     <ListItemText className="dashboard-side-links">
                         My Orders
                     </ListItemText>
-                </ListItem>
+                </ListItem>}
 
-                <ListItem as={Link} to={`${url}/givereview`} className='list-item' >
+                {!admin && <ListItem as={Link} to={`${url}/givereview`} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <ReviewsIcon />
                     </ListItemIcon>
                     <ListItemText className="dashboard-side-links">
                         Give a Review
                     </ListItemText>
-                </ListItem>
+                </ListItem>}
 
-                <ListItem as={Link} to={`${url}/payments`} className='list-item' >
+                {!admin && <ListItem as={Link} to={`${url}/payments`} className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <PaymentsIcon />
                     </ListItemIcon>
                     <ListItemText className="dashboard-side-links">
                         Payments
                     </ListItemText>
-                </ListItem>
+                </ListItem>}
 
                 <ListItem as={Link} to="/home" className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
@@ -219,7 +219,7 @@ function Dashboard(props) {
             >
                 <Toolbar />
                 {/* Dashboard Drawer Routes */}
-                <Switch>
+                {admin ? <Switch>
                     <Route exact path={path}>
                         <Welcome />
                     </Route>
@@ -235,16 +235,21 @@ function Dashboard(props) {
                     <AdminRoute path={`${path}/managewines`}>
                         <ManageWines />
                     </AdminRoute>
-                    <Route path={`${path}/myorders`}>
-                        <MyOrders />
-                    </Route>
-                    <Route path={`${path}/givereview`}>
-                        <GiveReview />
-                    </Route>
-                    <Route path={`${path}/payments`}>
-                        <Payments />
-                    </Route>
-                </Switch>
+                </Switch> :
+                    <Switch>
+                        <Route exact path={path}>
+                            <Welcome />
+                        </Route>
+                        <Route path={`${path}/myorders`}>
+                            <MyOrders />
+                        </Route>
+                        <Route path={`${path}/givereview`}>
+                            <GiveReview />
+                        </Route>
+                        <Route path={`${path}/payments`}>
+                            <Payments />
+                        </Route>
+                    </Switch>}
             </Box>
         </Box>
     );
