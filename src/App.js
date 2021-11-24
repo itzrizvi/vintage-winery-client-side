@@ -14,6 +14,8 @@ import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import NotFound from './Pages/NotFound/NotFound';
 
+
+// React Router V6 coming
 function App() {
   return (
     <div className="App">
