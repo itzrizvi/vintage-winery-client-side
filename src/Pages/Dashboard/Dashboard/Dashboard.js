@@ -23,27 +23,15 @@ import ExitToAppIcon from '@mui/icons-material/ExitToApp';
 import PaymentsIcon from '@mui/icons-material/Payments';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Link, Switch, Route, useRouteMatch } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import './Dashboard.css';
 import { Button } from 'react-bootstrap';
 import useAuth from '../../../hooks/useAuth';
-import Welcome from '../Welcome/Welcome';
-import ManageAllOrders from '../ManageAllOrders/ManageAllOrders';
-import AddNewWine from '../AddNewWine/AddNewWine';
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import ManageWines from '../ManageWines/ManageWines';
-import MyOrders from '../MyOrders/MyOrders';
-import GiveReview from '../GiveReview/GiveReview';
-import Payments from '../Payments/Payments';
-import AdminRoute from '../../AdminRoute/AdminRoute';
-
 
 const drawerWidth = 240;
 function Dashboard(props) {
     // Use Auth
     const { logOut, user, admin } = useAuth();
-    // Use Route Match
-    let { path, url } = useRouteMatch();
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -60,7 +48,7 @@ function Dashboard(props) {
             <Divider />
 
             <List>
-                <ListItem as={Link} to={`${url}`} className='list-item' >
+                <ListItem as={Link} to="/dashboard" className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <HomeIcon />
                     </ListItemIcon>
@@ -69,7 +57,7 @@ function Dashboard(props) {
                     </ListItemText>
                 </ListItem>
 
-                {admin && <ListItem as={Link} to={`${url}/manageallorders`} className='list-item' >
+                {admin && <ListItem as={Link} to="/dashboard/manageallorders" className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <ManageAccountsIcon />
                     </ListItemIcon>
@@ -78,7 +66,7 @@ function Dashboard(props) {
                     </ListItemText>
                 </ListItem>}
 
-                {admin && <ListItem as={Link} to={`${url}/addnewwine`} className='list-item' >
+                {admin && <ListItem as={Link} to="/dashboard/addnewwine" className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <WineBarIcon />
                     </ListItemIcon>
@@ -87,7 +75,7 @@ function Dashboard(props) {
                     </ListItemText>
                 </ListItem>}
 
-                {admin && <ListItem as={Link} to={`${url}/makeadmin`} className='list-item' >
+                {admin && <ListItem as={Link} to="/dashboard/makeadmin" className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <AdminPanelSettingsIcon />
                     </ListItemIcon>
@@ -96,7 +84,7 @@ function Dashboard(props) {
                     </ListItemText>
                 </ListItem>}
 
-                {admin && <ListItem as={Link} to={`${url}/managewines`} className='list-item' >
+                {admin && <ListItem as={Link} to="/dashboard/managewines" className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <SettingsIcon />
                     </ListItemIcon>
@@ -105,7 +93,7 @@ function Dashboard(props) {
                     </ListItemText>
                 </ListItem>}
 
-                {!admin && <ListItem as={Link} to={`${url}/myorders`} className='list-item' >
+                {!admin && <ListItem as={Link} to="/dashboard/myorders" className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <CardGiftcardIcon />
                     </ListItemIcon>
@@ -114,7 +102,7 @@ function Dashboard(props) {
                     </ListItemText>
                 </ListItem>}
 
-                {!admin && <ListItem as={Link} to={`${url}/givereview`} className='list-item' >
+                {!admin && <ListItem as={Link} to="/dashboard/givereview" className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <ReviewsIcon />
                     </ListItemIcon>
@@ -123,7 +111,7 @@ function Dashboard(props) {
                     </ListItemText>
                 </ListItem>}
 
-                {!admin && <ListItem as={Link} to={`${url}/payments`} className='list-item' >
+                {!admin && <ListItem as={Link} to="/dashboard/payments" className='list-item' >
                     <ListItemIcon className="dashboard-side-links">
                         <PaymentsIcon />
                     </ListItemIcon>
@@ -219,37 +207,7 @@ function Dashboard(props) {
             >
                 <Toolbar />
                 {/* Dashboard Drawer Routes */}
-                {admin ? <Switch>
-                    <Route exact path={path}>
-                        <Welcome />
-                    </Route>
-                    <AdminRoute path={`${path}/manageallorders`}>
-                        <ManageAllOrders />
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/addnewwine`}>
-                        <AddNewWine />
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/makeadmin`}>
-                        <MakeAdmin />
-                    </AdminRoute>
-                    <AdminRoute path={`${path}/managewines`}>
-                        <ManageWines />
-                    </AdminRoute>
-                </Switch> :
-                    <Switch>
-                        <Route exact path={path}>
-                            <Welcome />
-                        </Route>
-                        <Route path={`${path}/myorders`}>
-                            <MyOrders />
-                        </Route>
-                        <Route path={`${path}/givereview`}>
-                            <GiveReview />
-                        </Route>
-                        <Route path={`${path}/payments`}>
-                            <Payments />
-                        </Route>
-                    </Switch>}
+                <Outlet />
             </Box>
         </Box>
     );

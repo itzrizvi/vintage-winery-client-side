@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlassCheers } from '@fortawesome/free-solid-svg-icons';
 import './Register.css';
 import { Alert, Col, Container, Row, Spinner } from 'react-bootstrap';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../hooks/useAuth';
 
 const Register = () => {
@@ -11,8 +11,8 @@ const Register = () => {
     const glassIcon = <FontAwesomeIcon icon={faGlassCheers} />
     // Destructure Firebase Functions through USE AUTH HOOK
     const { registerNewUser, isLoading, authError } = useAuth();
-    // History Hook for redirecting
-    const history = useHistory();
+    // Navigate Hook for redirecting
+    const navigate = useNavigate();
     // STATE FOR Register DATA 
     const [registerData, setRegisterData] = useState({});
     // State for Success Message
@@ -34,7 +34,7 @@ const Register = () => {
             return;
         }
 
-        registerNewUser(registerData.email, registerData.password, registerData.name, history);
+        registerNewUser(registerData.email, registerData.password, registerData.name, navigate);
         setRegisterSuccess(true);
     }
     return (

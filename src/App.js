@@ -1,7 +1,7 @@
 import './App.css';
 import {
   BrowserRouter,
-  Switch,
+  Routes,
   Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home/Home';
@@ -13,50 +13,81 @@ import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Dashboard from './Pages/Dashboard/Dashboard/Dashboard';
 import NotFound from './Pages/NotFound/NotFound';
+import Welcome from './Pages/Dashboard/Welcome/Welcome';
+import AdminRoute from './Pages/AdminRoute/AdminRoute';
+import ManageAllOrders from './Pages/Dashboard/ManageAllOrders/ManageAllOrders';
+import AddNewWine from './Pages/Dashboard/AddNewWine/AddNewWine';
+import MakeAdmin from './Pages/Dashboard/MakeAdmin/MakeAdmin';
+import ManageWines from './Pages/Dashboard/ManageWines/ManageWines';
+import MyOrders from './Pages/Dashboard/MyOrders/MyOrders';
+import GiveReview from './Pages/Dashboard/GiveReview/GiveReview';
+import Payments from './Pages/Dashboard/Payments/Payments';
 
 
-// React Router V6 coming
 function App() {
+
   return (
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
-          <Switch>
+          <Routes>
 
-            <Route exact path="/">
-              <Home />
-            </Route>
+            <Route path="/" element={<Home />} />
 
-            <Route path="/home">
-              <Home />
-            </Route>
+            <Route path="/home" element={<Home />} />
 
-            <Route path="/allwines">
-              <AllWines />
-            </Route>
+            <Route path="/allwines" element={<AllWines />} />
 
             {/* Private Routes */}
-            <PrivateRoute path="/placeorder/:wineID">
-              <PlaceOrder />
-            </PrivateRoute>
+            <Route path="/placeorder/:wineID" element={
+              <PrivateRoute>
+                <PlaceOrder />
+              </PrivateRoute>
+            } />
 
-            <PrivateRoute path="/dashboard">
-              <Dashboard />
-            </PrivateRoute>
+            <Route path="/dashboard" element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            } >
+              {/* Dashboard Nesting Admin Routes starts*/}
 
-            <Route path="/login">
-              <Login />
+              <Route path="/dashboard" element={<Welcome />} />
+              <Route path="/dashboard/manageallorders" element={
+                <AdminRoute>
+                  <ManageAllOrders />
+                </AdminRoute>
+              } />
+              <Route path="/dashboard/addnewwine" element={
+                <AdminRoute>
+                  <AddNewWine />
+                </AdminRoute>
+              } />
+              <Route path="/dashboard/makeadmin" element={
+                <AdminRoute>
+                  <MakeAdmin />
+                </AdminRoute>
+              } />
+              <Route path="/dashboard/managewines" element={
+                <AdminRoute>
+                  <ManageWines />
+                </AdminRoute>
+              } />
+              <Route path="/dashboard" element={<Welcome />} />
+              <Route path="/dashboard/myorders" element={<MyOrders />} />
+              <Route path="/dashboard/givereview" element={<GiveReview />} />
+              <Route path="/dashboard/payments" element={<Payments />} />
+
+              {/* Dashboard Nesting Admin Routes ends*/}
             </Route>
 
-            <Route path="/register">
-              <Register />
-            </Route>
+            <Route path="/login" element={<Login />} />
 
-            <Route path="*">
-              <NotFound />
-            </Route>
+            <Route path="/register" element={<Register />} />
 
-          </Switch>
+            <Route path="*" element={<NotFound />} />
+
+          </Routes>
         </BrowserRouter>
       </AuthProvider>
     </div>

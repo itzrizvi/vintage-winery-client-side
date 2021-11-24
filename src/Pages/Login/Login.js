@@ -3,16 +3,16 @@ import { Alert, Col, Container, Row, Spinner } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlassCheers } from '@fortawesome/free-solid-svg-icons';
 import './Login.css'
-import { Link, useHistory, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { faGoogle } from '@fortawesome/free-brands-svg-icons';
 import useAuth from '../../hooks/useAuth';
 
 const Login = () => {
     // Using Use Auth For Login
     const { user, isLoading, authError, loginWithEmail, googleSignIn } = useAuth();
-    // Location Hook and History Hook For Redirection
+    // Location Hook and Navigate Hook For Redirection
     const location = useLocation();
-    const history = useHistory();
+    const navigate = useNavigate();
     // Fontawesome ICons
     const glassIcon = <FontAwesomeIcon icon={faGlassCheers} />
     const googleIcon = <FontAwesomeIcon icon={faGoogle} />
@@ -30,12 +30,12 @@ const Login = () => {
     // Login Function
     const handleLogin = e => {
         e.preventDefault();
-        loginWithEmail(loginData.email, loginData.password, location, history);
+        loginWithEmail(loginData.email, loginData.password, location, navigate);
     }
 
     // Google Sign In function
     const handleGoogleSignin = () => {
-        googleSignIn(location, history);
+        googleSignIn(location, navigate);
     }
     return (
         <>
