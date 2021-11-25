@@ -1,8 +1,11 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 import './ManageSingleOrder.css';
 
 const ManageSingleOrder = ({ singleOrder, allOrders, setAllOrders }) => {
+    // GET TOKEN FROM USE AUTH
+    const { token } = useAuth();
     // Destructuring Order Data
     const { clientName, clientEmail, wineName, winePrice, wineImg, orderStatus, _id } = singleOrder;
 
@@ -12,6 +15,7 @@ const ManageSingleOrder = ({ singleOrder, allOrders, setAllOrders }) => {
         fetch(url, {
             method: 'PUT',
             headers: {
+                'authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(singleOrder)
@@ -31,6 +35,9 @@ const ManageSingleOrder = ({ singleOrder, allOrders, setAllOrders }) => {
             const url = `https://fierce-forest-71065.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE',
+                headers: {
+                    'authorization': `Bearer ${token}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {

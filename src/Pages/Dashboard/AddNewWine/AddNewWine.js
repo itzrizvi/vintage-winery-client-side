@@ -4,8 +4,11 @@ import { faGlassCheers } from '@fortawesome/free-solid-svg-icons';
 import { Alert, Col, Container, Row } from 'react-bootstrap';
 import { useForm } from 'react-hook-form';
 import './AddNewWine.css';
+import useAuth from '../../../hooks/useAuth';
 
 const AddNewWine = () => {
+    // GET TOKEN FROM USE AUTH
+    const { token } = useAuth();
     // Fontawesome ICons
     const glassIcon = <FontAwesomeIcon icon={faGlassCheers} />
     //USING HOOK FORM
@@ -17,6 +20,7 @@ const AddNewWine = () => {
         fetch('https://fierce-forest-71065.herokuapp.com/wines', {
             method: 'POST',
             headers: {
+                'authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)

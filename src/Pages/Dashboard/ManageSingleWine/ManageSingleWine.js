@@ -1,16 +1,21 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import useAuth from '../../../hooks/useAuth';
 import './ManageSingleWine.css';
 
 const ManageSingleWine = ({ wineSingle, setWineDelete, setWines, wines }) => {
-
+    // GET TOKEN FROM USE AUTH
+    const { token } = useAuth();
     // Wine Delete Handler
     const handleWineDelete = id => {
         const confirmation = window.confirm('Are you sure you want to delete this Wine???');
         if (confirmation) {
             const url = `https://fierce-forest-71065.herokuapp.com/wines/${id}`;
             fetch(url, {
-                method: 'DELETE'
+                method: 'DELETE',
+                headers: {
+                    'authorization': `Bearer ${token}`
+                }
             })
                 .then(res => res.json())
                 .then(data => {

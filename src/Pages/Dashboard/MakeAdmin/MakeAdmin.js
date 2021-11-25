@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { Alert, Button, Col, Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlassCheers } from '@fortawesome/free-solid-svg-icons';
+import useAuth from '../../../hooks/useAuth';
 import './MakeAdmin.css';
 
 const MakeAdmin = () => {
+    // GET TOKEN FROM USE AUTH
+    const { token } = useAuth();
     // Fontawesome ICons
     const glassIcon = <FontAwesomeIcon icon={faGlassCheers} />
     // State For Getting Email for making admin
@@ -23,6 +26,7 @@ const MakeAdmin = () => {
         fetch('https://fierce-forest-71065.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
+                'authorization': `Bearer ${token}`,
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(user)
