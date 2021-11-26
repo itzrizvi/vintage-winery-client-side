@@ -3,18 +3,25 @@ import { Container, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGlassCheers } from '@fortawesome/free-solid-svg-icons';
 import ManageSingleOrder from '../ManageSingleOrder/ManageSingleOrder';
+import useAuth from '../../../hooks/useAuth';
 
 const ManageAllOrders = () => {
+    // GET TOKEN FROM USE AUTH
+    const { token } = useAuth();
     // Fontawesome ICons
     const glassIcon = <FontAwesomeIcon icon={faGlassCheers} />
     // State For All Orders For Admin
     const [allOrders, setAllOrders] = useState([]);
     // All Order Fetching for Admin
     useEffect(() => {
-        fetch('https://fierce-forest-71065.herokuapp.com/orders')
+        fetch('https://fierce-forest-71065.herokuapp.com/orders', {
+            headers: {
+                'authorization': `Bearer ${token}`
+            }
+        })
             .then(res => res.json())
             .then(data => setAllOrders(data));
-    }, [allOrders]);
+    }, [allOrders, token]);
     return (
         <>
             <div className="manage-order-section py-4">
