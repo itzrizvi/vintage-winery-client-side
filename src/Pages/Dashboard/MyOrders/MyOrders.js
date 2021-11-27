@@ -10,15 +10,19 @@ const MyOrders = () => {
     // Fontawesome ICons
     const glassIcon = <FontAwesomeIcon icon={faGlassCheers} />
     // Using useAuth
-    const { user } = useAuth();
+    const { user, token } = useAuth();
     // State For Orders of Logged In User
     const [orders, setOrders] = useState([]);
     // Fetch orders by dynamic param user email
     useEffect(() => {
-        fetch(`https://fierce-forest-71065.herokuapp.com/orders/${user.email}`)
+        fetch(`https://fierce-forest-71065.herokuapp.com/orders/${user.email}`, {
+            headers: {
+                'authorization': `Bearer ${token}`,
+            }
+        })
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, [user.email])
+    }, [user.email, token])
     return (
         <>
             <div className="manage-order-section py-4">
