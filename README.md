@@ -4,7 +4,7 @@
 
 <p><strong>Summery:</strong> <br />
                 Vintage winery is basically a winery store, who they produce wines of 
-                different flavours and ship them to anywhere the customer wants. Basically it's a personal project but it can be use in any professional winery producer. The website is based on MEARN Stack. Here are some main features this project.</p>
+                different flavours and ship them to anywhere the customer wants. Basically it's a personal project but it can be use in any professional winery producer. The website is based on MERN Stack. Here are some main features this project.</p>
 
 ######## <strong>Main Features</strong> #########<br />
 * This is a REACT JS Project <br />
